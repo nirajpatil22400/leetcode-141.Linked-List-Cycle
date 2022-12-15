@@ -1,0 +1,38 @@
+141. Linked List Cycle
+
+Solution: 
+      
+                     public boolean hasCycle(ListNode head)
+                     {
+                         if(head==null)
+                            return false;
+  
+                         //we will take two pointer first
+
+                          ListNode slow = head;
+                          ListNode fast = head;
+
+                         while(slow != fast)
+                         {
+                             //it means we reached the end we never
+                            // come back it means it not cycle.
+  
+                            if(fast == null || fast.next == nul)
+                               return false;
+                             
+                            // here , we doing that slow moving one time.
+                           
+                                slow = slow.next;
+
+                           // And, the fast moving for two times;
+
+                             fast = fast.next.next;
+                         }
+
+                         //if it is a cycle then we simply return true
+   
+                         return true;
+                     }
+
+TC : O(N)
+SP : O(1)
